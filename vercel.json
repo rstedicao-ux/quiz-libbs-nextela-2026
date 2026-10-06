@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/api/perguntas/:numero/respostas", "destination": "/api/perguntas/[numero]/respostas?numero=:numero" },
+    { "source": "/api/perguntas/:numero/respostas", "destination": "/api/respostas?numero=:numero" },
     { "source": "/api/(.*)", "destination": "/api/$1" },
     { "source": "/(.*)", "destination": "/frontend/$1" }
   ]
