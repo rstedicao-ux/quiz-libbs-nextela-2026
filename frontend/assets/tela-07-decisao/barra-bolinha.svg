@@ -1,0 +1,17 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="24" cy="24" r="23" fill="#D9D9D9" fill-opacity="0.11" stroke="url(#anel1)"/>
+<circle cx="24" cy="24" r="15.5" fill="#D9D9D9" fill-opacity="0.2" stroke="url(#anel2)"/>
+<circle cx="24" cy="24" r="8" fill="white"/>
+<defs>
+<linearGradient id="anel1" x1="0.5" y1="24" x2="47.5" y2="24" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="0.615385" stop-color="white" stop-opacity="0"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+<linearGradient id="anel2" x1="8" y1="24" x2="40" y2="24" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="0.615385" stop-color="white" stop-opacity="0"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+</defs>
+</svg>

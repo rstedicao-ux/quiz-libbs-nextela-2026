@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conferência do banco — Quiz Nextela</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f5f3f5; color: #29232b; font: 16px/1.5 system-ui, sans-serif; }
+    main { max-width: 1200px; padding: 32px 20px; margin: auto; }
+    h1 { margin-bottom: 8px; font-size: 28px; }
+    h2 { font-size: 20px; margin: 0; }
+    p { color: #625967; }
+    button { background: #61264f; color: white; padding: 12px 20px; border: 0; border-radius: 8px; cursor: pointer; font: inherit; }
+    button:disabled { opacity: .6; cursor: wait; }
+    section { background: white; padding: 20px; margin-top: 24px; border: 1px solid #ded7df; border-radius: 12px; }
+    .scroll { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #e8e2e9; white-space: nowrap; }
+    th { background: #f5eff4; }
+    td { font-family: ui-monospace, monospace; }
+    #status { min-height: 24px; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Conferência do banco de dados</h1>
+  <p>Todas as tabelas e registros do SQLite. Consultar esta página não registra participantes nem altera os dados.</p>
+  <button id="atualizar" type="button">Atualizar dados</button>
+  <p id="status" role="status" aria-live="polite"></p>
+  <div id="tabelas"></div>
+</main>
+<script>
+  if (location.protocol === 'file:') {
+    location.replace('http://localhost:8090/consultar_dados.html');
+  } else {
+    const botao = document.getElementById('atualizar');
+    const status = document.getElementById('status');
+    const tabelas = document.getElementById('tabelas');
+    function elemento(tag, texto) {
+      const node = document.createElement(tag);
+      node.textContent = texto;
+      return node;
+    }
+    async function atualizar() {
+      botao.disabled = true;
+      status.textContent = 'Carregando dados…';
+      try {
+        const response = await fetch('/api/banco', { cache: 'no-store', signal: AbortSignal.timeout(15000) });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const dados = await response.json();
+        const fragmento = document.createDocumentFragment();
+        for (const tabela of dados.tabelas) {
+          const section = document.createElement('section');
+          section.append(elemento('h2', tabela.nome), elemento('p', `${tabela.registros.length} registro(s)`));
+          const scroll = document.createElement('div');
+          scroll.className = 'scroll';
+          const table = document.createElement('table');
+          const head = table.createTHead().insertRow();
+          for (const coluna of tabela.colunas) {
+            const th = elemento('th', coluna);
+            th.scope = 'col';
+            head.append(th);
+          }
+          const body = table.createTBody();
+          for (const registro of tabela.registros) {
+            const row = body.insertRow();
+            for (const coluna of tabela.colunas) row.append(elemento('td', registro[coluna] === null ? 'NULL' : String(registro[coluna])));
+          }
+          scroll.append(table);
+          section.append(scroll);
+          if (!tabela.registros.length) section.append(elemento('p', 'Tabela vazia.'));
+          fragmento.append(section);
+        }
+        tabelas.replaceChildren(fragmento);
+        status.textContent = `Atualizado em ${new Date().toLocaleString('pt-BR')}. ${dados.tabelas.length} tabela(s).`;
+      } catch (error) {
+        status.textContent = `Não foi possível atualizar (${error.message}). Verifique se os serviços estão iniciados. Dados anteriores, se exibidos, estão desatualizados.`;
+      } finally {
+        botao.disabled = false;
+      }
+    }
+    botao.addEventListener('click', atualizar);
+    atualizar();
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+.env.local
+
+# Docker / local DB
+db/
+*.sqlite3
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db

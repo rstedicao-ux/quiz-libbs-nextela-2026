@@ -1,0 +1,11 @@
+<svg width="239" height="69" viewBox="0 0 239 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="238" height="68" rx="34" stroke="url(#trilha)"/>
+<path d="M206 33C206 37.4183 209.582 41 214 41C218.418 41 222 37.4183 222 33C222 28.5817 218.418 25 214 25C209.582 25 206 28.5817 206 33ZM37 31.5H214V34.5H37V31.5Z" fill="white"/>
+<defs>
+<linearGradient id="trilha" x1="-20.5" y1="24.5" x2="284" y2="165" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="0.382872" stop-color="white" stop-opacity="0"/>
+<stop offset="0.917376" stop-color="white"/>
+</linearGradient>
+</defs>
+</svg>

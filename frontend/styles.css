@@ -1,0 +1,1514 @@
+/* ==================== FONTES (Figma) ==================== */
+
+@font-face { font-family: "Domaine Sans Text"; src: url("fontes/web/DomaineSansText-Light.otf") format("opentype"); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: "Domaine Sans Text"; src: url("fontes/web/DomaineSansText-Medium.otf") format("opentype"); font-weight: 500; font-style: normal; font-display: swap; }
+
+@font-face { font-family: "Libbs Sans"; src: url("fontes/web/LibbsSans-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Libbs Sans"; src: url("fontes/web/LibbsSans-Medium.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Libbs Sans"; src: url("fontes/web/LibbsSans-MediumItalic.woff2") format("woff2"); font-weight: 500; font-style: italic; font-display: swap; }
+@font-face { font-family: "Libbs Sans"; src: url("fontes/web/LibbsSans-Bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+
+@font-face { font-family: "Sharp Grotesk 25"; src: url("fontes/web/SharpGrotesk-Book25.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Sharp Grotesk 25"; src: url("fontes/web/SharpGrotesk-SemiBold25.otf") format("opentype"); font-weight: 600; font-style: normal; font-display: swap; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+body {
+  font-family: "Libbs Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.tela {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  max-width: calc(100vh * 1080 / 1920);
+  max-height: calc(100vw * 1920 / 1080);
+  aspect-ratio: 1080 / 1920;
+  overflow: hidden;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  /* base para as unidades cqw: tamanho de fonte relativo à largura real
+     da .tela (não da janela), assim o texto fica proporcional em
+     qualquer formato de janela/monitor, não só em 1080x1920 exato */
+  container-type: inline-size;
+}
+
+.tela[hidden] {
+  display: none;
+}
+
+.tela-inicio {
+  background-image: url("assets/tela-01-inicio/fundo.png");
+}
+
+.tela-momento,
+.tela-perimenopausa {
+  background-image: url("assets/tela-02-momento/fundo.png");
+}
+
+/* --- Decorações de canto --- */
+
+.decor {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+.decor-topo {
+  top: 0;
+  left: 74.583%;
+  width: 25.648%;
+}
+
+.decor-base {
+  bottom: 0;
+  left: 0;
+  width: 19.537%;
+}
+
+/* --- Logo --- */
+
+.logo {
+  position: absolute;
+  top: 7.97%;
+  left: 40.09%;
+  width: 19.85%;
+}
+
+/* --- Título --- */
+
+.titulo {
+  position: absolute;
+  top: 19.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  text-align: center;
+  color: #5e264e;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.08;
+  font-size: 8.4cqw;
+}
+
+.titulo span {
+  display: block;
+}
+
+/* --- Fumaça + gotas --- */
+
+.fumaca {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  user-select: none;
+  z-index: 2;
+}
+
+.gotas {
+  position: absolute;
+  top: 28.79%;
+  left: 30.19%;
+  width: 38.52%;
+  user-select: none;
+  z-index: 2;
+}
+
+/* --- Botão --- */
+
+.botao-iniciar {
+  position: absolute;
+  z-index: 1;
+  top: 72.92%;
+  left: 18.89%;
+  width: 63.52%;
+  height: 16.82%;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+  background-image: url("assets/tela-01-inicio/botao-fundo.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2%;
+  cursor: pointer;
+  padding: 0;
+}
+
+.botao-icone {
+  width: 14%;
+  height: auto;
+}
+
+.botao-texto {
+  color: #ffffff;
+  font-size: 3.4cqw;
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: center;
+}
+
+/* ==================== TELA 2 — MOMENTO ==================== */
+
+.decor2 {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+.decor2-topo {
+  top: 0;
+  left: 0;
+  width: 53.43%;
+}
+
+.decor2-base {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.logo-branco {
+  position: absolute;
+  top: 1.61%;
+  left: 3.33%;
+  width: 13.89%;
+  user-select: none;
+}
+
+.icone-home {
+  position: absolute;
+  top: 1.15%;
+  left: 89.54%;
+  width: 7.41%;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.icone-home img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.etapa-label {
+  position: absolute;
+  top: 9.01%;
+  left: 10.46%;
+  width: 79.07%;
+  text-align: center;
+  color: #5e264e;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  font-size: 3.6cqw;
+}
+
+.item-pedras {
+  position: absolute;
+  top: 12.45%;
+  left: 27.87%;
+  width: 45.09%;
+  user-select: none;
+}
+
+.mulher-completa {
+  position: absolute;
+  top: 20.05%;
+  left: 3.33%;
+  width: 96.76%;
+  height: auto;
+  display: block;
+  user-select: none;
+}
+
+.popup-paciente {
+  position: absolute;
+  top: 22.5%;
+  left: 56.44%;
+  width: 39.21%;
+}
+
+.popup-fundo {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+}
+
+.popup-conteudo {
+  position: absolute;
+  inset: 0;
+  padding: 30% 8% 11% 8%;
+  color: #5e264e;
+}
+
+.popup-conteudo h2 {
+  font-size: 2.6cqw;
+  line-height: 1.15;
+  font-weight: 700;
+  margin-bottom: 8%;
+}
+
+.popup-conteudo p {
+  font-size: 1.55cqw;
+  line-height: 1.35;
+  margin-bottom: 6%;
+}
+
+.linha-branca {
+  position: absolute;
+  top: 54.6%;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.pergunta-titulo {
+  position: absolute;
+  top: 61%;
+  left: 8.5%;
+  width: 83%;
+  color: #5e264e;
+  font-weight: 700;
+  line-height: 1.15;
+  font-size: 4.15cqw;
+  white-space: nowrap;
+}
+
+.opcoes {
+  transition: opacity 0.3s ease;
+}
+
+.opcoes.opcoes-saindo {
+  opacity: 0;
+}
+
+.opcoes {
+  position: absolute;
+  top: 65.99%;
+  left: 6.11%;
+  width: 85.56%;
+  height: 18.85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.opcao {
+  position: relative;
+  width: 100%;
+  height: 29.56%;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.opcao-fundo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  user-select: none;
+}
+
+.opcao-texto {
+  position: absolute;
+  top: 50%;
+  left: 10.4%;
+  transform: translateY(-50%);
+  color: #5e264e;
+  font-weight: 600;
+  font-size: 3cqw;
+  max-width: 65%;
+}
+
+.opcao-radio {
+  position: absolute;
+  top: 50%;
+  right: 4.3%;
+  transform: translateY(-50%);
+  width: 10%;
+  user-select: none;
+}
+
+/* ==================== TELA 3 — PERIMENOPAUSA ==================== */
+
+.check-correto {
+  position: absolute;
+  top: 24.17%;
+  left: 86.76%;
+  width: 6.16%;
+  user-select: none;
+}
+
+.painel-texto {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.explicacao {
+  position: absolute;
+  top: 61.93%;
+  left: 9.91%;
+  width: 79.72%;
+  text-align: center;
+  color: #5e264e;
+}
+
+.explicacao-texto {
+  font-weight: 700;
+  font-size: 3.61cqw;
+  line-height: 1.31;
+}
+
+.explicacao-fonte {
+  margin-top: 3.7%;
+  font-weight: 600;
+  font-size: 1.62cqw;
+  line-height: 1.3;
+}
+
+.toque-seguir {
+  position: absolute;
+  top: 81.6%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #fa0979;
+  font-weight: 600;
+  font-size: 3.1cqw;
+  line-height: 1.2;
+}
+
+/* ==================== TELA 4 — DESAFIO 40+ ==================== */
+
+.tela-desafio {
+  background-image: url("assets/tela-04-desafio/fundo.png");
+}
+
+.mulher-fundo {
+  position: absolute;
+  top: 38.54%;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.bloco-vinho {
+  position: absolute;
+  top: -0.03%;
+  left: -0.35%;
+  width: 101.85%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.decor4-base {
+  position: absolute;
+  top: 73.91%;
+  left: 33.33%;
+  width: 66.85%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.logo4 {
+  position: absolute;
+  top: 4.27%;
+  left: 40.09%;
+  width: 19.85%;
+  user-select: none;
+}
+
+.icone-home4 {
+  top: 1.56%;
+  left: 85.93%;
+}
+
+.etapa2-label {
+  position: absolute;
+  top: 14.11%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #f7e7e0;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  font-size: 3.31cqw;
+}
+
+.mito-titulo {
+  position: absolute;
+  top: 55.6%;
+  left: 6.67%;
+  width: 60%;
+  color: #61264f;
+  font-weight: 700;
+  line-height: 1.02;
+  font-size: 9.58cqw;
+}
+
+.mito-texto {
+  position: absolute;
+  top: 70.36%;
+  left: 6.85%;
+  width: 66%;
+  color: #61264f;
+  font-weight: 600;
+  line-height: 1.12;
+  font-size: 4.08cqw;
+}
+
+.botao-iniciar-quiz {
+  position: absolute;
+  top: 82.18%;
+  left: 4.72%;
+  width: 40.65%;
+  height: 6.77%;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  outline: none;
+  padding: 0;
+  background-color: transparent;
+  background-image: url("assets/tela-04-desafio/botao-iniciar.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.botao-iniciar-texto {
+  position: absolute;
+  top: 50%;
+  left: 12.3%;
+  transform: translateY(-50%);
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  font-size: 3.54cqw;
+}
+
+.botao-continuar {
+  position: absolute;
+  top: 83.54%;
+  left: 34.91%;
+  width: 30.19%;
+  height: 5.05%;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  outline: none;
+  padding: 0;
+  background-color: transparent;
+  background-image: url("assets/tela-03-perimenopausa/botao-continuar.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 3.06cqw;
+}
+
+/* ==================== TELA 5 — PERGUNTA 01 ==================== */
+
+.tela-pergunta {
+  background-image: url("assets/tela-05-pergunta/fundo.png");
+}
+
+.decor5-sup {
+  position: absolute;
+  top: -0.21%;
+  left: 71.26%;
+  width: 30.28%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.decor5-inf {
+  position: absolute;
+  top: 76.88%;
+  left: 0;
+  width: 83.15%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.etapa2-label5 {
+  top: 7.76%;
+  color: #fbece3;
+}
+
+.linha-etapa {
+  position: absolute;
+  top: 10.86%;
+  left: 29.86%;
+  width: 40.37%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.barra-coracoes {
+  position: absolute;
+  top: 12.29%;
+  left: 27.5%;
+  width: 45.09%;
+  user-select: none;
+}
+
+.mito-titulo5 {
+  position: absolute;
+  top: 20.42%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 1.09;
+  font-size: 7.85cqw;
+}
+
+.box-pergunta {
+  position: absolute;
+  top: 30.52%;
+  left: 7.04%;
+  width: 86.02%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.pergunta-numero {
+  position: absolute;
+  top: 35.36%;
+  left: 15.19%;
+  color: #5e264e;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  font-size: 2.42cqw;
+}
+
+.linha-pergunta {
+  position: absolute;
+  top: 38.02%;
+  left: 15.19%;
+  width: 6.39%;
+  height: 1px;
+  background: #e4086e;
+}
+
+.pergunta-enunciado {
+  position: absolute;
+  top: 39.74%;
+  left: 15.19%;
+  width: 72%;
+  color: #5e264e;
+  font-weight: 500;
+  line-height: 1.09;
+  font-size: 5.44cqw;
+}
+
+.resposta {
+  position: absolute;
+  top: 61.35%;
+  width: 39.26%;
+  height: 18.18%;
+  border: 0;
+  padding: 0;
+  background: #fbece3;
+  border-radius: 3.7cqw;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* feedback de certo/errado — mesma referência de cor usada nos botões da etapa 1 */
+.resposta.correta {
+  background-color: #b6d0ac; /* verde aguado */
+}
+
+.resposta.errada {
+  background-color: #b6403a; /* vermelho forte */
+}
+
+/* ==================== UTILITÁRIO: FADE DE SAÍDA SUAVE ====================
+   Reutilizável em qualquer transição entre telas. Precisa de 2 passos porque
+   remover a animação de entrada e mudar a opacidade no mesmo instante faz o
+   navegador pular direto pro valor final, sem rodar a transição (ver
+   saidaSuave() no script.js). */
+
+.saida-transicao {
+  transition: opacity 0.3s ease;
+}
+
+.saida-transicao.saida-parado {
+  animation: none !important;
+}
+
+.saida-transicao.saida-oculto {
+  opacity: 0;
+}
+
+.resposta-mito {
+  left: 8.98%;
+}
+
+.resposta-verdade {
+  left: 51.85%;
+}
+
+.resposta-icone {
+  position: absolute;
+  top: 10.6%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32.3%;
+  user-select: none;
+}
+
+.resposta-texto {
+  position: absolute;
+  top: 66.2%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #5e264e;
+  font-weight: 700;
+  font-size: 4.38cqw;
+}
+
+/* ==================== TELA 6 — RESPOSTA 01 ==================== */
+
+.tela-resposta {
+  background-image: url("assets/tela-05-pergunta/fundo.png");
+}
+
+.decor6-sup {
+  position: absolute;
+  top: -1.51%;
+  left: -16px;
+  width: 34.26%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.decor6-inf {
+  position: absolute;
+  top: 76.88%;
+  left: 18.33%;
+  width: 81.67%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.resposta-titulo {
+  position: absolute;
+  top: 21.98%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 1;
+  font-size: 10.2cqw;
+}
+
+.popup-resposta {
+  position: absolute;
+  top: 30.52%;
+  left: 7.04%;
+  width: 86.02%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.resposta-explicacao {
+  position: absolute;
+  top: 40.63%;
+  left: 15.19%;
+  width: 73%;
+  color: #5e264e;
+  font-weight: 500;
+  line-height: 1.09;
+  font-size: 4.5cqw;
+}
+
+.resposta-estatistica {
+  position: absolute;
+  top: 59.53%;
+  left: 14.17%;
+  width: 62.22%;
+  height: 2.71%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #5e264e;
+  border-radius: 8px;
+  color: #5e264e;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 2.62cqw;
+  white-space: nowrap;
+}
+
+.resposta-fonte {
+  position: absolute;
+  top: 64.06%;
+  left: 15.19%;
+  width: 74%;
+  color: #5e264e;
+  font-weight: 500;
+  line-height: 1.25;
+  font-size: 1.79cqw;
+}
+
+.botao-proximo {
+  position: absolute;
+  top: 75.16%;
+  left: 33.06%;
+  width: 33.89%;
+  height: 5.47%;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  outline: none;
+  padding: 0;
+  background-color: transparent;
+  background-image: url("assets/tela-06-resposta/botao-proximo.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.botao-proximo-texto {
+  position: absolute;
+  top: 50%;
+  left: 11.7%;
+  transform: translateY(-50%);
+  color: #ffffff;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  font-size: 3.44cqw;
+}
+
+/* --- Resposta 02 (popup maior, botão mais abaixo) --- */
+
+.resposta-explicacao-02 {
+  width: 72%;
+  font-size: 3.65cqw;
+}
+
+.resposta-explicacao-02 p + p {
+  margin-top: 1.09em;
+}
+
+.resposta-estatistica-02 {
+  top: 67.08%;
+}
+
+.resposta-fonte-02a {
+  top: 71.77%;
+  line-height: 1.1;
+}
+
+.resposta-fonte-02b {
+  top: 75.2%;
+  width: 75%;
+  line-height: 1.1;
+}
+
+.botao-proximo-02 {
+  top: 89.11%;
+}
+
+/* Resposta 02: popup atrás da decoração inferior; textos e botão continuam acima */
+#tela-resposta-02 .decor6-inf {
+  z-index: 1;
+}
+
+#tela-resposta-02 .pergunta-numero,
+#tela-resposta-02 .linha-pergunta,
+#tela-resposta-02 .resposta-explicacao,
+#tela-resposta-02 .resposta-estatistica,
+#tela-resposta-02 .resposta-fonte,
+#tela-resposta-02 .botao-proximo {
+  z-index: 2;
+}
+
+/* ==================== TELA RESULTADO FINAL ==================== */
+
+.resultado-texto {
+  position: absolute;
+  top: 70.36%;
+  left: 6.85%;
+  width: 78%;
+  color: #61264f;
+  line-height: 1.02;
+  font-size: 4.08cqw;
+}
+
+.resultado-texto strong {
+  font-weight: 700;
+}
+
+.resultado-detalhe {
+  font-weight: 400;
+  font-size: 0.75em;
+}
+
+/* ==================== TELA ETAPA 3 — A DECISÃO ==================== */
+
+.tela-decisao {
+  background-image: url("assets/tela-07-decisao/fundo.png");
+}
+
+.decor7-sup {
+  position: absolute;
+  top: 0;
+  left: 61.85%;
+  width: 38.06%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.decor7-inf {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 73.33%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.etapa3-label {
+  top: 10.26%;
+  color: #ffffff;
+}
+
+.decisao-titulo {
+  position: absolute;
+  top: 72.66%;
+  left: 6.11%;
+  width: 90%;
+  color: #ffffff;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.17em;
+  font-size: 12.5cqw;
+  white-space: nowrap;
+}
+
+.arraste-texto {
+  position: absolute;
+  top: 82.4%;
+  left: 7.13%;
+  color: #ffffff;
+  font-weight: 400;
+  line-height: 1.25;
+  font-size: 4.27cqw;
+}
+
+.arraste-barra {
+  position: absolute;
+  top: 83.18%;
+  left: 41.2%;
+  width: 22.13%;
+  aspect-ratio: 239 / 69;
+  touch-action: none;
+}
+
+.arraste-trilha {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* bolinha: 48/239 da largura da trilha; centro parte em 37.5/239 e vai até 214/239 */
+.arraste-bolinha {
+  position: absolute;
+  top: 50%;
+  left: 15.69%;
+  width: 20.08%;
+  transform: translate(-50%, -50%);
+  cursor: grab;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.arraste-bolinha.arrastando {
+  cursor: grabbing;
+}
+
+.decisao-frames {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.decisao-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 10;
+  background: #000;
+}
+
+.decisao-video[hidden] {
+  display: none;
+}
+
+/* esconde qualquer overlay nativo do navegador (picture-in-picture, "enhance", cast) */
+.decisao-video::-webkit-media-controls,
+.decisao-video::-webkit-media-controls-panel,
+.decisao-video::-webkit-media-controls-start-playback-button,
+.decisao-video::-webkit-media-controls-overlay-play-button,
+.decisao-video::-webkit-media-controls-overlay-enclosure {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* área clicável sobre o botão "acessar minibula" do último frame do vídeo */
+.video-cta {
+  position: absolute;
+  top: 68.5%;
+  left: 24%;
+  width: 52%;
+  height: 5.3%;
+  z-index: 11;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.video-cta[hidden] {
+  display: none;
+}
+
+/* ==================== TELA MINIBULA ==================== */
+
+.tela-minibula {
+  background-image: url("assets/tela-08-minibula/fundo.png");
+}
+
+.minibula-painel {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.minibula-aba {
+  position: absolute;
+  top: 1.15%;
+  left: 24.17%;
+  width: 51.48%;
+  user-select: none;
+}
+
+.minibula-home {
+  top: 2.66%;
+  left: 84.44%;
+}
+
+.minibula-texto {
+  position: absolute;
+  top: 13.47%;
+  left: 13.15%;
+  width: 73.7%;
+  color: #1a1a1a;
+  font-size: 1.52cqw;
+  line-height: 1.21;
+}
+
+.minibula-texto p + p {
+  margin-top: 1.21em;
+}
+
+/* ==================== TIPOGRAFIA (valores exatos do Figma) ==================== */
+
+/* Tela 1 */
+.titulo { font-family: "Domaine Sans Text"; font-weight: 500; text-transform: uppercase; letter-spacing: 0; line-height: 1; }
+.titulo { top: 21.05%; }
+.titulo span { display: block; }
+.titulo span:first-child { font-size: 7.41cqw; line-height: 1.225; }
+.titulo span:last-child { font-size: 11.40cqw; }
+.botao-texto { font-family: "Libbs Sans"; font-weight: 400; font-size: 3.24cqw; line-height: 1.06; }
+.botao-iniciar { gap: 8%; padding-bottom: 3.15%; }
+.botao-icone { width: 10.2%; margin-left: -1.4%; }
+
+/* Tela 2 / 3 */
+.etapa-label { font-family: "Domaine Sans Text"; font-weight: 500; font-size: 3.24cqw; letter-spacing: 0.1em; text-transform: uppercase; }
+.pergunta-titulo { font-family: "Domaine Sans Text"; font-weight: 500; font-size: 4.09cqw; }
+.popup-conteudo h2 { font-family: "Domaine Sans Text"; font-weight: 500; font-size: 4.09cqw; line-height: 0.857; }
+.popup-conteudo p { font-family: "Domaine Sans Text"; font-weight: 500; font-size: 2.31cqw; line-height: 1.086; }
+.opcao-texto { font-family: "Domaine Sans Text"; font-weight: 500; font-size: 3.24cqw; }
+.explicacao-texto { font-family: "Domaine Sans Text"; font-weight: 500; font-size: 3.70cqw; line-height: 1.2; }
+.explicacao-fonte { font-family: "Domaine Sans Text"; font-weight: 500; font-size: 1.39cqw; }
+.toque-seguir { font-family: "Sharp Grotesk 25"; font-weight: 400; font-size: 2.31cqw; }
+.botao-continuar { font-family: "Sharp Grotesk 25"; font-weight: 400; font-size: 2.31cqw; text-transform: none; }
+
+/* Tela 4 / Resultado */
+.etapa2-label { font-family: "Domaine Sans Text"; font-weight: 300; font-size: 3.24cqw; letter-spacing: 0.1em; text-transform: uppercase; }
+.mito-titulo { font-family: "Domaine Sans Text"; font-weight: 500; font-size: 8.86cqw; line-height: 0.841; text-transform: uppercase; }
+.mito-texto { font-family: "Domaine Sans Text"; font-weight: 500; font-size: 3.70cqw; line-height: 1.066; }
+.botao-iniciar-texto { font-family: "Sharp Grotesk 25"; font-weight: 400; font-size: 3.12cqw; letter-spacing: 0; text-transform: uppercase; }
+.resultado-texto { font-family: "Domaine Sans Text"; font-size: 3.70cqw; line-height: 1.066; }
+.resultado-texto strong { font-weight: 500; }
+.resultado-detalhe { font-weight: 300; font-size: 0.75em; }
+
+/* Tela 5 / 6 (perguntas e respostas) */
+.mito-titulo5 { font-family: "Domaine Sans Text"; font-weight: 500; font-size: 7.41cqw; line-height: 1.066; text-transform: uppercase; }
+.pergunta-numero { font-family: "Domaine Sans Text"; font-weight: 300; font-size: 2.31cqw; letter-spacing: 0.16em; text-transform: uppercase; }
+.pergunta-enunciado { font-family: "Libbs Sans"; font-weight: 400; font-size: 5.56cqw; line-height: 1.066; }
+.pergunta-enunciado strong { font-weight: 700; }
+/* perguntas 06 e 07 têm texto mais longo e usam fonte menor no Figma (50px) */
+.pergunta-enunciado.pergunta-enunciado-menor { font-size: 4.63cqw; }
+.resposta-texto { font-family: "Libbs Sans"; font-weight: 700; font-size: 4.63cqw; }
+.resposta-titulo { font-family: "Domaine Sans Text"; font-weight: 500; font-size: 9.26cqw; line-height: 1.066; text-transform: uppercase; }
+.resposta-explicacao { font-family: "Libbs Sans"; font-weight: 400; font-size: 4.63cqw; line-height: 1.066; }
+.resposta-explicacao-02 { font-size: 3.70cqw; }
+.resposta-estatistica { font-family: "Libbs Sans"; font-weight: 500; font-style: italic; font-size: 2.78cqw; }
+.resposta-fonte { font-family: "Libbs Sans"; font-weight: 400; font-size: 1.85cqw; line-height: 1.066; }
+.botao-proximo-texto { font-family: "Sharp Grotesk 25"; font-weight: 400; font-size: 3.12cqw; letter-spacing: 0; text-transform: uppercase; }
+
+/* Etapa 3 */
+.etapa3-label { font-weight: 300; }
+.decisao-titulo { font-family: "Sharp Grotesk 25"; font-weight: 600; font-size: 12.04cqw; letter-spacing: 0; line-height: 1; text-transform: uppercase; }
+.arraste-texto { font-family: "Domaine Sans Text"; font-weight: 300; font-size: 3.70cqw; line-height: 1.066; }
+
+/* Minibula */
+.minibula-texto { font-family: "Libbs Sans"; font-weight: 400; font-size: 1.48cqw; line-height: 1.2; color: #000; }
+.minibula-texto strong { font-weight: 700; }
+
+/* ==================== ANIMAÇÃO DE ENTRADA — TELA 1 ==================== */
+
+@keyframes entrada-escala {
+  from { opacity: 0; transform: scale(0.7); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes entrada-opacidade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes entrada-subida {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes entrada-descida {
+  from { opacity: 1; transform: translateY(-50px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* escala sem sumir de vista — usada quando a decoração troca de uma tela pra
+   outra e não pode ficar invisível no meio da transição */
+@keyframes entrada-escala-visivel {
+  from { opacity: 1; transform: scale(0.7); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.tela-inicio .decor-topo,
+.tela-inicio .decor-base,
+.tela-inicio .logo,
+.tela-inicio .titulo span,
+.tela-inicio .gotas,
+.tela-inicio .botao-iniciar,
+.tela-inicio .fumaca {
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+  animation-fill-mode: both;
+}
+
+.tela-inicio .decor-topo {
+  transform-origin: 100% 0%;
+  animation-name: entrada-escala;
+}
+
+.tela-inicio .decor-base {
+  transform-origin: 0% 100%;
+  animation-name: entrada-escala;
+}
+
+.tela-inicio .logo,
+.tela-inicio .fumaca {
+  animation-name: entrada-opacidade;
+}
+
+/* sequência: logo, título linha a linha, gotas uma de cada vez e, por fim, o botão */
+.tela-inicio .titulo span,
+.tela-inicio .gotas,
+.tela-inicio .botao-iniciar {
+  animation-name: entrada-subida;
+}
+
+.tela-inicio .titulo span:first-child { animation-delay: 0.15s; }
+.tela-inicio .titulo span:last-child { animation-delay: 0.3s; }
+.tela-inicio .gota-1 { animation-delay: 0.45s; }
+.tela-inicio .gota-2 { animation-delay: 0.6s; }
+.tela-inicio .gota-3 { animation-delay: 0.75s; }
+.tela-inicio .botao-iniciar { animation-delay: 0.9s; }
+.tela-inicio .fumaca { animation-delay: 1.4s; }
+
+/* mãozinha do botão pulsando continuamente, indicando o toque */
+@keyframes pulso-mao {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.15); }
+}
+
+.botao-icone {
+  animation: pulso-mao 1.1s ease-in-out infinite;
+  animation-delay: 1.9s;
+}
+
+/* ==================== ANIMAÇÃO DE ENTRADA — TELA 2 ==================== */
+
+.tela-momento .decor2-topo,
+.tela-momento .decor2-base,
+.tela-momento .logo-branco,
+.tela-momento .icone-home,
+.tela-momento .etapa-label,
+.tela-momento .item-pedras,
+.tela-momento .mulher-completa,
+.tela-momento .popup-paciente,
+.tela-momento .linha-branca,
+.tela-momento .pergunta-titulo,
+.tela-momento .opcao {
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+  animation-fill-mode: both;
+}
+
+.tela-momento .decor2-topo {
+  transform-origin: 0% 0%;
+  animation-name: entrada-escala;
+}
+
+.tela-momento .decor2-base {
+  transform-origin: 100% 100%;
+  animation-name: entrada-escala;
+}
+
+.tela-momento .etapa-label,
+.tela-momento .item-pedras,
+.tela-momento .mulher-completa,
+.tela-momento .popup-paciente,
+.tela-momento .linha-branca,
+.tela-momento .pergunta-titulo,
+.tela-momento .opcao {
+  animation-name: entrada-subida;
+}
+
+.tela-momento .logo-branco,
+.tela-momento .icone-home {
+  animation-name: entrada-opacidade;
+}
+
+.tela-momento .icone-home       { animation-delay: 0.15s; }
+.tela-momento .etapa-label      { animation-delay: 0.3s; }
+.tela-momento .item-pedras      { animation-delay: 0.45s; }
+.tela-momento .mulher-completa  { animation-delay: 0.6s; }
+.tela-momento .popup-paciente   { animation-delay: 0.75s; }
+.tela-momento .linha-branca     { animation-delay: 0.9s; }
+.tela-momento .pergunta-titulo  { animation-delay: 1.05s; }
+.tela-momento .opcoes .opcao:nth-child(1) { animation-delay: 1.2s; }
+.tela-momento .opcoes .opcao:nth-child(2) { animation-delay: 1.35s; }
+.tela-momento .opcoes .opcao:nth-child(3) { animation-delay: 1.5s; }
+
+/* ==================== ANIMAÇÃO DE ENTRADA — TELA 3 (PERIMENOPAUSA) ==================== */
+/* decoração, logo, ícone home, item-pedras, mulher, popup e linha branca são os mesmos
+   assets nas mesmas posições da tela 2, então ficam parados; só o que muda entra */
+
+.tela-perimenopausa .check-correto,
+.tela-perimenopausa .painel-texto {
+  animation-name: entrada-opacidade;
+  animation-duration: 0.4s;
+  animation-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+  animation-fill-mode: both;
+}
+
+/* texto e botão entram com o mesmo translate das outras telas */
+.tela-perimenopausa .explicacao,
+.tela-perimenopausa .toque-seguir,
+.tela-perimenopausa .botao-continuar {
+  animation-name: entrada-subida;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+  animation-fill-mode: both;
+}
+
+.tela-perimenopausa .explicacao      { animation-delay: 0s; }
+.tela-perimenopausa .toque-seguir    { animation-delay: 0.15s; }
+.tela-perimenopausa .botao-continuar { animation-delay: 0.3s; }
+
+/* ==================== ANIMAÇÃO DE ENTRADA — TELA 4 (DESAFIO 40+) ==================== */
+
+.tela-desafio .bloco-vinho,
+.tela-desafio .decor4-base,
+.tela-desafio .logo4,
+.tela-desafio .icone-home4,
+.tela-desafio .etapa2-label,
+.tela-desafio .mulher-fundo,
+.tela-desafio .mito-titulo,
+.tela-desafio .mito-texto,
+.tela-desafio .resultado-texto,
+.tela-desafio .botao-iniciar-quiz {
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+  animation-fill-mode: both;
+}
+
+.tela-desafio .bloco-vinho {
+  animation-name: entrada-descida;
+}
+
+.tela-desafio .decor4-base {
+  transform-origin: 100% 100%;
+  animation-name: entrada-escala;
+}
+
+.tela-desafio .mulher-fundo,
+.tela-desafio .mito-titulo,
+.tela-desafio .mito-texto,
+.tela-desafio .resultado-texto,
+.tela-desafio .botao-iniciar-quiz {
+  animation-name: entrada-subida;
+}
+
+.tela-desafio .logo4,
+.tela-desafio .icone-home4,
+.tela-desafio .etapa2-label {
+  animation-name: entrada-opacidade;
+}
+
+.tela-desafio .logo4              { animation-delay: 0.15s; }
+.tela-desafio .icone-home4        { animation-delay: 0.3s; }
+.tela-desafio .etapa2-label       { animation-delay: 0.45s; }
+.tela-desafio .mulher-fundo       { animation-delay: 0.6s; }
+.tela-desafio .mito-titulo        { animation-delay: 0.75s; }
+.tela-desafio .mito-texto         { animation-delay: 0.9s; }
+.tela-desafio .resultado-texto    { animation-delay: 0.9s; }
+.tela-desafio .botao-iniciar-quiz { animation-delay: 1.05s; }
+
+/* ==================== ANIMAÇÃO DE ENTRADA — TELA 5 (PERGUNTA) ==================== */
+
+.tela-pergunta .decor5-sup,
+.tela-pergunta .decor5-inf,
+.tela-pergunta .logo-branco,
+.tela-pergunta .etapa2-label5,
+.tela-pergunta .linha-etapa,
+.tela-pergunta .barra-coracoes,
+.tela-pergunta .mito-titulo5,
+.tela-pergunta .box-pergunta,
+.tela-pergunta .pergunta-numero,
+.tela-pergunta .linha-pergunta,
+.tela-pergunta .pergunta-enunciado,
+.tela-pergunta .resposta {
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+  animation-fill-mode: both;
+}
+
+.tela-pergunta .decor5-sup {
+  transform-origin: 100% 0%;
+  animation-name: entrada-escala;
+}
+
+.tela-pergunta .decor5-inf {
+  transform-origin: 0% 100%;
+  animation-name: entrada-escala;
+}
+
+.tela-pergunta .etapa2-label5,
+.tela-pergunta .linha-etapa,
+.tela-pergunta .barra-coracoes,
+.tela-pergunta .mito-titulo5,
+.tela-pergunta .box-pergunta,
+.tela-pergunta .pergunta-numero,
+.tela-pergunta .linha-pergunta,
+.tela-pergunta .pergunta-enunciado,
+.tela-pergunta .resposta {
+  animation-name: entrada-subida;
+}
+
+.tela-pergunta .logo-branco {
+  animation-name: entrada-opacidade;
+}
+
+/* ícone home só anima na primeira tela da etapa (desafio); aqui fica estático */
+
+.tela-pergunta .logo-branco       { animation-delay: 0.15s; }
+.tela-pergunta .etapa2-label5     { animation-delay: 0.45s; }
+.tela-pergunta .linha-etapa       { animation-delay: 0.6s; }
+.tela-pergunta .barra-coracoes    { animation-delay: 0.75s; }
+.tela-pergunta .mito-titulo5      { animation-delay: 0.9s; }
+
+/* o popup (box-pergunta) entra junto com o texto da pergunta */
+.tela-pergunta .box-pergunta,
+.tela-pergunta .pergunta-numero,
+.tela-pergunta .linha-pergunta,
+.tela-pergunta .pergunta-enunciado { animation-delay: 1.05s; }
+
+.tela-pergunta .resposta-mito     { animation-delay: 1.2s; }
+.tela-pergunta .resposta-verdade  { animation-delay: 1.35s; }
+
+/* ==================== ANIMAÇÃO DE ENTRADA — TELA 6 (RESPOSTA) ==================== */
+
+.tela-resposta .decor6-sup,
+.tela-resposta .decor6-inf,
+.tela-resposta .resposta-titulo,
+.tela-resposta .popup-resposta,
+.tela-resposta .pergunta-numero,
+.tela-resposta .linha-pergunta,
+.tela-resposta .resposta-explicacao,
+.tela-resposta .resposta-estatistica,
+.tela-resposta .resposta-fonte,
+.tela-resposta .botao-proximo {
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+  animation-fill-mode: both;
+}
+
+/* a logo é o mesmo asset/posição da tela de pergunta — fica estática, sem sumir e voltar */
+
+.tela-resposta .decor6-sup {
+  transform-origin: 0% 0%;
+  animation-name: entrada-escala-visivel;
+}
+
+.tela-resposta .decor6-inf {
+  transform-origin: 100% 100%;
+  animation-name: entrada-escala-visivel;
+}
+
+.tela-resposta .resposta-titulo,
+.tela-resposta .popup-resposta,
+.tela-resposta .pergunta-numero,
+.tela-resposta .linha-pergunta,
+.tela-resposta .resposta-explicacao,
+.tela-resposta .resposta-estatistica,
+.tela-resposta .resposta-fonte,
+.tela-resposta .botao-proximo {
+  animation-name: entrada-subida;
+}
+
+/* logo, ícone home, label da etapa, linha e corações já entraram na tela de pergunta; aqui ficam estáticos */
+
+.tela-resposta .resposta-titulo   { animation-delay: 0.15s; }
+
+/* o popup entra junto com o texto, mesmo padrão da tela de pergunta */
+.tela-resposta .popup-resposta,
+.tela-resposta .pergunta-numero,
+.tela-resposta .linha-pergunta,
+.tela-resposta .resposta-explicacao { animation-delay: 0.3s; }
+
+.tela-resposta .resposta-estatistica { animation-delay: 0.45s; }
+.tela-resposta .resposta-fonte       { animation-delay: 0.6s; }
+.tela-resposta .botao-proximo        { animation-delay: 0.75s; }
+
+/* ==================== ANIMAÇÃO DE ENTRADA — TELA 7 (DECISÃO) ==================== */
+
+.tela-decisao .decor7-sup,
+.tela-decisao .decor7-inf,
+.tela-decisao .logo4,
+.tela-decisao .icone-home4,
+.tela-decisao .etapa3-label,
+.tela-decisao .decisao-titulo,
+.tela-decisao .arraste-texto,
+.tela-decisao .decisao-frames,
+.tela-decisao .arraste-barra {
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+  animation-fill-mode: both;
+}
+
+.tela-decisao .decor7-sup {
+  transform-origin: 100% 0%;
+  animation-name: entrada-escala;
+}
+
+.tela-decisao .decor7-inf {
+  transform-origin: 0% 100%;
+  animation-name: entrada-escala;
+}
+
+.tela-decisao .logo4,
+.tela-decisao .icone-home4 {
+  animation-name: entrada-opacidade;
+}
+
+.tela-decisao .etapa3-label,
+.tela-decisao .decisao-titulo,
+.tela-decisao .arraste-texto,
+.tela-decisao .decisao-frames,
+.tela-decisao .arraste-barra {
+  animation-name: entrada-subida;
+}
+
+.tela-decisao .logo4          { animation-delay: 0.15s; }
+.tela-decisao .icone-home4    { animation-delay: 0.15s; }
+.tela-decisao .etapa3-label   { animation-delay: 0.3s; }
+.tela-decisao .decisao-frames { animation-delay: 0.45s; }
+.tela-decisao .decisao-titulo { animation-delay: 0.6s; }
+
+/* texto "arraste para unir" e a barra entram juntos */
+.tela-decisao .arraste-texto,
+.tela-decisao .arraste-barra { animation-delay: 0.75s; }
+
+.resultado-detalhe[hidden] { display: none; }

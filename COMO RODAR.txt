@@ -1,0 +1,105 @@
+COMO RODAR A APLICAÇÃO — QUIZ NEXTELA
+================================================
+
+Siga esta ordem. O passo 1 é único (só na primeira vez que a aplicação
+for instalada numa máquina nova). Depois disso, todo dia é só o
+passo 2.
+
+
+1. INSTALAR O DOCKER DESKTOP (uma vez só, antes de tudo)
+----------------------------------------------------------
+- Baixe em: https://www.docker.com/products/docker-desktop/
+- Instale e reinicie o computador se ele pedir.
+- Abra o Docker Desktop e espere o ícone dele (baleia) ficar parado na
+  bandeja do Windows, sem animação — isso indica que ele terminou de
+  carregar.
+- Essa instalação precisa de internet. Depois de instalada, a
+  aplicação funciona sem internet no dia a dia.
+
+
+2. INICIAR A APLICAÇÃO (isso é feito toda vez que for usar)
+----------------------------------------------------------
+- Clique com o BOTÃO DIREITO no arquivo:
+    iniciar_servico (executar como administrador).bat
+- Escolha "Executar como administrador".
+- Se o Windows perguntar "Deseja permitir que este aplicativo faça
+  alterações no dispositivo?", clique em SIM.
+- Se o Docker Desktop ainda não estiver aberto, o próprio arquivo abre
+  ele sozinho e espera terminar de carregar (isso pode levar cerca de
+  um minuto).
+- Aguarde a janela preta mostrar que tudo subiu certinho; o navegador
+  abre sozinho, já na tela inicial do quiz
+  (http://localhost:8090/index.html).
+- A primeira vez que isso roda numa máquina nova precisa de internet e
+  pode demorar alguns minutos, porque baixa e prepara tudo. Depois
+  dessa primeira vez, não precisa mais de internet — as próximas
+  vezes sobem em poucos segundos.
+
+
+3. DEIXAR EM TELA CHEIA NO TOTEM (modo kiosk)
+----------------------------------------------------------
+- Com o navegador já aberto na tela do quiz, aperte a tecla F11 do
+  teclado para entrar em tela cheia (some a barra de endereço e o
+  restante do navegador).
+- Para sair da tela cheia, aperte F11 de novo.
+- Esse passo é manual, feito por quem está montando o totem — a
+  aplicação não entra em tela cheia sozinha.
+
+
+4. USAR
+----------------------------------------------------------
+- A pessoa toca em "Toque para começar" e segue o quiz normalmente
+  pelas etapas até o final.
+- Cada resposta certa ou errada já atualiza sozinha os percentuais
+  mostrados nas telas seguintes (ex.: "X% dos participantes
+  responderam corretamente").
+
+
+5. CONFERIR OS DADOS SALVOS (opcional)
+----------------------------------------------------------
+- Para ver os números que estão sendo salvos (quantas pessoas
+  responderam, quantos acertos por pergunta etc.), acesse pelo
+  navegador:
+    http://localhost:8090/consultar_dados.html
+- Essa página só mostra os dados, não altera nada.
+
+
+6. ZERAR O BANCO DE DADOS (quando quiser reiniciar as estatísticas)
+----------------------------------------------------------
+Use isso, por exemplo, antes de um evento, se quiser começar a
+contagem de participantes do zero.
+
+- Feche as telas do quiz que estiverem abertas no navegador.
+- Clique com o BOTÃO DIREITO no arquivo:
+    zerar_banco (executar como administrador).bat
+- Escolha "Executar como administrador" e confirme se o Windows
+  perguntar.
+- Aguarde a mensagem confirmando que os contadores foram zerados.
+- Essa ação APAGA todos os participantes e respostas já registrados.
+  Não tem como desfazer.
+- Depois de zerar, recarregue a página do quiz antes de usar de novo.
+
+
+7. ENCERRAR
+----------------------------------------------------------
+- Pode fechar a janela preta e o navegador normalmente. Os containers
+  continuam rodando em segundo plano e não atrapalham o computador.
+
+
+PROBLEMAS COMUNS
+----------------------------------------------------------
+- Se a tela não abrir sozinha no navegador, acesse manualmente:
+    http://localhost:8090/index.html
+- Se aparecer erro dizendo que a porta 8090 está em uso: feche outro
+  programa que esteja usando essa porta, ou avise a parte técnica.
+- Se nada funcionar: feche tudo, abra o Docker Desktop, espere
+  carregar por completo e repita o passo 2.
+- O primeiro início em cada máquina precisa de internet; os próximos
+  não precisam.
+
+
+OBSERVAÇÃO
+----------------------------------------------------------
+O quiz é pensado para um monitor em modo retrato (vertical), com tela
+sensível ao toque. Não é preciso nenhum leitor ou equipamento externo
+— só o computador com o monitor touchscreen conectado.
