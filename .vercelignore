@@ -1,0 +1,4 @@
+backend/
+compose.yaml
+*.bat
+db/
